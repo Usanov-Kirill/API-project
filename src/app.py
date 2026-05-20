@@ -6,7 +6,6 @@ from src.schemas import Student, UpdateStudent, Error
 
 import random
 
-
 def create_app():
     #init_db()
 
@@ -65,7 +64,7 @@ def create_app():
             total = len(all_id)
             group_ids = []
             if count > total:
-                raise HTTPException(status_code=416, detail="your count is bigger than count of students")
+                raise HTTPException(status_code=400, detail="your count is bigger than count of students")
 
             while len(group_ids) < count:
                 rand_id = random.choice(all_id)
